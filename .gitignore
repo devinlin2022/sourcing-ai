@@ -1,0 +1,11 @@
+.env
+data/*.duckdb
+data/*.duckdb.wal
+data/*.csv
+data/*.xlsx
+__pycache__/
+*.pyc
+.pytest_cache/
+.DS_Store
+.ipynb_checkpoints/
+data/cache/
