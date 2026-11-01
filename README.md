@@ -49,7 +49,7 @@
 ## 快速开始（本地）
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/devinlin2022/sourcing-ai.git
 cd sourcing-ai
 pip install -r requirements.txt
 cp .env.example .env          # 修改 ADMIN_PASSWORD
@@ -81,8 +81,8 @@ python scripts/seed.py /path/to/your/data
 
 ```python
 # 1. 拉代码
-!git clone https://github.com/<your-account>/<your-repo>.git
-%cd <your-repo>
+!git clone https://github.com/devinlin2022/sourcing-ai.git
+%cd sourcing-ai
 
 # 2. 装依赖（约 1-2 分钟）
 !pip install -q -r requirements.txt
@@ -199,6 +199,9 @@ pytest -q
 ```
 
 覆盖：文件类型识别、重复导入拦截、增量 UPSERT 不产生重复行、**6.99 倍去重守卫**、异常价格置空、FHR 分档、跨厂寻源结论、FTG 公式一致性、CBCS 证据绑定、RR 名称匹配不误配。
+
+> 这些用例校验的是**真实数据的口径陷阱**，需要把业务 CSV / xlsx 放在仓库的上一级目录（默认不会进 Git）。
+> 找不到样本数据时会整体 skip 而不是报错，方便别人 clone 后先看代码。
 
 ---
 
