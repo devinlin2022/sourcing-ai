@@ -180,8 +180,8 @@ def build_blocks() -> gr.Blocks:
                         gr.HTML(
                             "<div class='card'><b>上传数据</b><div class='muted' "
                             "style='margin-top:6px'>支持 CSV（≥100MB 秒级解析）与 RapidRatings "
-                            "xlsx，自动识别 8 类文件。重复文件自动跳过，增量按主键 UPSERT，"
-                            "异常价格行进隔离区不参与计算。</div></div>"
+                            "xlsx，自动识别 8 类文件。重复文件按内容哈希跳过，增量按主键 UPSERT；"
+                            "订单价/标准价比值异常的行只置空可疑价格字段、整行保留，并留下审计记录。</div></div>"
                         )
                         files = gr.File(label="选择文件", file_count="multiple")
                         upload_btn = gr.Button("上传并解析", variant="primary")
